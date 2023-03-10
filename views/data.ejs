@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+   div{
+        border:1px solid black;
+        //padding:10px 5px;
+        width:600px;
+   }
+
+   form{
+     display:inline-block;
+ }
+
+   .edit, .del{
+        cursor:pointer; 
+  }
+
+   
+</style>
+</head>
+<body>
+   
+
+   <h2>Wrestler Info</h2>
+   <form method="POST" action='/updateWrestler'>
+        Wrestler Id:<input type="text" placeholder="<%= user._id%>" name="userId" value=<%= user._id%> disabled/><br/>
+        Wrestler Name:<input type="text" placeholder="<%= user.name%>" name="name" value=<%= user.name%> /><br/>
+        Wrestler Email:<input type="text" placeholder="<%= user.age%>" name="age" value=<%= user.age%> /><br/>
+        <br/>
+        <button type="submit">Update Wrestler Info</button>
+   </form>
+
+   <script>
+       
+       
+     
+
+   </script>
+</body>
+</html>

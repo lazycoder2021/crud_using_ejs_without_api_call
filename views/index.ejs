@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+   div{
+        border:1px solid black;
+        //padding:10px 5px;
+        width:600px;
+   }
+
+   form{
+     display:inline-block;
+ }
+
+   .edit, .del{
+        cursor:pointer; 
+  }
+
+   
+</style>
+</head>
+<body>
+   <h2>Crud using EJS -- without any api call</h2>
+   <form method="POST" action="/createWrestler">
+        <input type="text" name="name" placeholder="wrestler name..."/>
+        <input type="text" name="email" placeholder="wrestler email..."/>
+        <input type="submit" />
+   </form>
+
+   <% for (var i = 0; i < list.length; i++) { %>
+
+   <div>
+         <a href="/id=<%=list[i]._id%>"><span><%= list[i]._id%></span></a>   
+         <span><%= list[i].name%></span>
+         <span><%= list[i].age%></span>
+         &nbsp;
+
+         
+
+         <form method="POST" action='/deleteWrestler'>
+            <input type="hidden" name="userId" value=<%= list[i]._id%> />
+            <button type="submit" class="del">Delete</button>
+         </form>
+         
+   </div>
+
+   <% } %>
+
+   <script>
+       
+       
+     
+
+   </script>
+</body>
+</html>
